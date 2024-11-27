@@ -1,0 +1,33 @@
+{
+  "name": "browser_discord_bot",
+  "version": "0.1.0",
+  "description": "TODO",
+  "homepage": "https://github.com/DaBigBlob/TODO#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaBigBlob/TODO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DaBigBlob/TODO/issues",
+    "email": "browser_discord_bot@hman.io"
+  },
+  "author": {
+    "name": "LocalBox Crox",
+    "email": "browser_discord_bot@hman.io"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "prebuild": "rm -r ./pub && mkdir ./pub",
+    "build:js": "tsup",
+    "build": "npm run build:js && bun run ./build.ts && rm ./pub/main.js",
+    "test": "npm run build && open ./pub/index.html",
+    "typecheck": "tsc --noEmit",
+    "clean": "npm run prebuild"
+  }
+}

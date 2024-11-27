@@ -14,5 +14,5 @@ export default defineConfig({
   dts: false,
   shims: true,
   format: ["esm"],
-  target: ['es6']
+  target: ["es6"]
 })

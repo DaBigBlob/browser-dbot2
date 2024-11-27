@@ -180,3 +180,5 @@ lib-esm/
 _conf.ts
 wiki/
 *.lockb
+
+pub/*

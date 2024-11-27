@@ -14,5 +14,5 @@ export default defineConfig({
   dts: false,
   shims: true,
   format: ["esm"],
-  target: ['chrome120', 'edge120', 'firefox120', 'safari16']
+  target: ['es6']
 })

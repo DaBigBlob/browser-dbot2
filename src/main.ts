@@ -1,5 +1,5 @@
 
-import { LogConsole, LCLine } from './log_console/mod.js';
+import { LogConsole, LCLine } from './log_console/_.js';
 
 window.onload = async (_) => {
     const lcelm = document.body.querySelector<HTMLDivElement>("#LogConsole");

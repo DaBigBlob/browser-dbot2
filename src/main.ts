@@ -14,8 +14,8 @@ window.onload = async (_) => {
     const con = new LogConsole(lcelm, () => lcbtmcb.checked, () => Number(lcbtmms.value));
 
     const el1 = new LCLine()
-        .add({txt: "[hey]", fclor: "red", bold: true})
-        .add({txt: "[hoho]", fclor: "green"});
+        .add({txt: "[hey]", fclor: "orange", bold: true})
+        .add({txt: "[hoho]", fclor: "red"});
     // const el2 = new LCLine()
     //     .add(new LCFrag("[hey]", {font_color: "red", bold: true}))
     //     .add(new LCFrag("[hoho]", {font_color: "green"}));

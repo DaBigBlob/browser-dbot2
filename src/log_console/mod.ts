@@ -49,6 +49,7 @@ export class LogConsole {
         this.size++;
         _new.id = `i${this.size+this.offset}`; // natural number
         this.root.appendChild(_new);
+        _new.scrollIntoView();
         return this;
     }
 

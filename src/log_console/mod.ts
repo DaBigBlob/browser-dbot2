@@ -39,11 +39,17 @@ export class LogConsole {
     private offset: number = 0;
     private size: number = 0;
 
-    public btm_scrl: () => boolean = () => true;
-    public max_size: () => number = () => 100;
+    public btm_scrl: () => boolean;
+    public max_size: () => number;
 
-    constructor(_root: HTMLElement) {
+    constructor(
+        _root: HTMLElement,
+        btm_scrl_fn: () => boolean = () => true,
+        max_size_fn: () => number = () => 100
+    ) {
         this.root = _root;
+        this.btm_scrl = btm_scrl_fn;
+        this.max_size = max_size_fn;
     }
 
     private trunc(_max_size: number) {

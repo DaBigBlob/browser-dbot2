@@ -2,10 +2,16 @@
 import { LogConsole, LCLine } from './log_console/mod.js';
 
 window.onload = async (_) => {
-    const tr = document.body.querySelector<HTMLDivElement>("#LogConsole");
-    if (!tr) throw Error("No <div> with id LogConsole in body.");
+    const lcelm = document.body.querySelector<HTMLDivElement>("#LogConsole");
+    if (!lcelm) throw Error("No <div> with id LogConsole in body.");
 
-    const con = new LogConsole(tr);
+    const lcbtmcb = document.body.querySelector<HTMLInputElement>("#LCJumpToLatestCheckBox");
+    if (!lcbtmcb) throw Error("No <div> with id LCJumpToLatestCheckBox in body.");
+
+    const lcbtmms = document.body.querySelector<HTMLInputElement>("#LCMaxSizeInput");
+    if (!lcbtmms) throw Error("No <div> with id LCMaxSizeInput in body.");
+
+    const con = new LogConsole(lcelm, () => lcbtmcb.checked, () => Number(lcbtmms.value));
 
     const el1 = new LCLine()
         .add({txt: "[hey]", fclor: "red", bold: true})

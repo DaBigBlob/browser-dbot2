@@ -19,12 +19,8 @@
             width: 100vw;
         }
         #LogConsole {
-            /* position: fixed;
-            bottom: 0;
-            left: 0; */
             width: 50%;
             height: 100%;
-            border: 1px solid red;
             max-height: 100%;
             overflow-y: auto;
         }
@@ -39,7 +35,10 @@
 <body>
     <div id="LogConsole"></div>
     <div id="LCControls">
-        <input id="LCJumpToLatestCheckBox" name="scroll to latest" type="checkbox" checked>
+        <label class="checkbox-button">
+            <input id="LCJumpToLatestCheckBox" name="scroll to latest" type="checkbox" checked>
+            <span class="button-text">scroll to latest</span>
+          </label>
         <input id="LCMaxSizeInput" name="newsletter" type="number" min="0" value="100" step="1">
     </div>
 </body>

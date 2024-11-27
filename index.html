@@ -29,17 +29,23 @@
             top: 0;
             right: 0;
         }
+        .LCControlsChildren {
+            display: block;
+        }
 
     </style>
 </head>
 <body>
     <div id="LogConsole"></div>
     <div id="LCControls">
-        <label class="checkbox-button">
+        <label class="LCControlsChildren">
+            <span>scroll to latest</span>
             <input id="LCJumpToLatestCheckBox" name="scroll to latest" type="checkbox" checked>
-            <span class="button-text">scroll to latest</span>
-          </label>
-        <input id="LCMaxSizeInput" name="newsletter" type="number" min="0" value="100" step="1">
+        </label>
+        <label class="LCControlsChildren">
+            <span>max log size</span>
+            <input id="LCMaxSizeInput" name="max log size" type="number" min="0" value="100" step="1">
+        </label>
     </div>
 </body>
 </html>

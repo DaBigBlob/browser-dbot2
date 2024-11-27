@@ -35,25 +35,18 @@ export class LCLine {
 }
 
 export class LogConsole {
-    public readonly root: HTMLDivElement;
+    public readonly root: HTMLElement;
     private offset: number = 0;
     private size: number = 0;
 
-    constructor() {
-        const tr = document.body.querySelector<HTMLDivElement>("#LogConsole");
-        if (!tr) throw Error("No <div> with id LogConsole in body.");
-        this.root = tr;
+    public btm_scrl: () => boolean = () => true;
+    public max_size: () => number = () => 100;
+
+    constructor(_root: HTMLElement) {
+        this.root = _root;
     }
 
-    public push(_new: HTMLSpanElement): LogConsole {
-        this.size++;
-        _new.id = `i${this.size+this.offset}`; // natural number
-        this.root.appendChild(_new);
-        _new.scrollIntoView();
-        return this;
-    }
-
-    public trunc(_max_size: number) {
+    private trunc(_max_size: number) {
         if (this.size > _max_size) {
             const _s = this.size, _o = this.offset;
             for (let i = _o+1; i <= _o-_max_size+_s; i++) {
@@ -62,5 +55,17 @@ export class LogConsole {
                 this.size--;
             }
         }
+    }
+
+    public push(_new: HTMLSpanElement): LogConsole {
+        this.size++;
+
+        _new.id = `i${this.size+this.offset}`; // natural number
+        this.root.appendChild(_new);
+
+        if (this.btm_scrl()) _new.scrollIntoView();
+        this.trunc(this.max_size());
+
+        return this;
     }
 }

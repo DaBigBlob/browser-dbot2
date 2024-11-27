@@ -22,26 +22,25 @@
             /* position: fixed;
             bottom: 0;
             left: 0; */
-            width: 100%;
+            width: 50%;
             height: 100%;
             border: 1px solid red;
             max-height: 100%;
             overflow-y: auto;
         }
-        #LCJumpToLatest {
+        #LCControls {
             position: fixed;
             top: 0;
             right: 0;
-            display: block;
-            padding: 0.5em;
-            margin: 1em;
-            border-radius: 0.3em;
         }
 
     </style>
 </head>
 <body>
     <div id="LogConsole"></div>
-    <button id="LCJumpToLatest">jump to latest</button>
+    <div id="LCControls">
+        <input id="LCJumpToLatestCheckBox" name="scroll to latest" type="checkbox" checked>
+        <input id="LCMaxSizeInput" name="newsletter" type="number" min="0" step="1">
+    </div>
 </body>
 </html>

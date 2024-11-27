@@ -2,7 +2,10 @@
 import { LogConsole, LCLine } from './log_console/mod.js';
 
 window.onload = async (_) => {
-    const con = new LogConsole();
+    const tr = document.body.querySelector<HTMLDivElement>("#LogConsole");
+    if (!tr) throw Error("No <div> with id LogConsole in body.");
+
+    const con = new LogConsole(tr);
 
     const el1 = new LCLine()
         .add({txt: "[hey]", fclor: "red", bold: true})
@@ -19,6 +22,5 @@ window.onload = async (_) => {
     while (true) {
         await (() => new Promise(resolve => setTimeout(resolve, 100)))();
         con.push(el1.clone().add({txt: ""+i++}).spawn());
-        con.trunc(100);
     }
 }
